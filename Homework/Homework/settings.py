@@ -45,13 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -148,7 +145,3 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_USE_SSL = True
 
 STATIC_URL = '/static/'
-
-LOGIN_REDIRECT_URL = '/'
-LOGIN_URL =  "/login/"
-ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True

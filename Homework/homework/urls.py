@@ -3,5 +3,4 @@ from homework import views
 
 urlpatterns = [
   url(r'^$', views.index, name='index'),
-  # url(r'^product/$', views.product, name='product'),
 ]
