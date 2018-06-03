@@ -2,10 +2,17 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from .models import *
-# from .forms import ProductForm
+from .forms import HomeWorkForm
 
 def index(request):
 	context = {}
+	form = HomeWorkForm()
+	if request.method == "POST":
+		form = HomeWorkForm(request.POST)
+		if form.is_valid():
+			import pdb;pdb.set_trace()
+			pass
+	context['form'] = form
 	return render(request, 'homework/index.html', context)
 
 # @login_required

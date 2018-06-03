@@ -2,5 +2,39 @@
 
 
 {% block content %}
-	<p>Data will be here</p>
+	<form method="POST", action="{% url 'homework:index' %}">
+	{% csrf_token %}
+		{{ form.non_field_errors }}
+		<div class="fieldWrapper">
+		    {{ form.first_name.errors }}
+		    <label for="{{ form.first_name.id_for_label }}">First Name: </label>
+		    {{ form.first_name }}
+		</div>
+
+		<div class="fieldWrapper">
+		    {{ form.last_name.errors }}
+		    <label for="{{ form.last_name.id_for_label }}">Last Name: </label>
+		    {{ form.last_name }}
+		</div>
+
+		<div class="fieldWrapper">
+		    {{ form.phone_number.errors }}
+		    <label for="{{ form.phone_number.id_for_label }}">Phone Number: </label>
+		    {{ form.phone_number }}
+		</div>
+
+		<div class="fieldWrapper">
+		    {{ form.city.errors }}
+		    <label for="{{ form.city.id_for_label }}">Select City :</label>
+		    {{ form.city }}
+		</div>
+
+		<div class="fieldWrapper">
+		    {{ form.date.errors }}
+		    <label for="{{ form.date.id_for_label }}">Date :</label>
+		    {{ form.date }}
+		</div>
+
+		<button type="submit"> Submit </button>
+	</form>
 {% endblock %}
