@@ -2,39 +2,88 @@
 
 
 {% block content %}
-	<form method="POST", action="{% url 'homework:index' %}">
+	{% if success_message %}
+		<div class="alert alert-success">
+		  	{{ success_message }}
+		</div>
+	{% endif%}
+
+	{% if info_message %}
+		<div class="alert alert-info">
+		  	{{ info_message }}
+		</div>
+	{% endif%}
+
+	<form id="homework_form" name="homework_form" method="POST", action="{% url 'homework:index' %}">
 	{% csrf_token %}
 		{{ form.non_field_errors }}
 		<div class="fieldWrapper">
-		    {{ form.first_name.errors }}
+		    {% if form.first_name.errors %}
+			    <div class="alert alert-danger">
+				  	 {{ form.first_name.errors }}
+				</div>
+			{% endif %}
 		    <label for="{{ form.first_name.id_for_label }}">First Name: </label>
 		    {{ form.first_name }}
 		</div>
 
 		<div class="fieldWrapper">
-		    {{ form.last_name.errors }}
+		    {% if form.last_name.errors %}
+			    <div class="alert alert-danger">
+				  	 {{ form.last_name.errors }}
+				</div>
+			{% endif %}
 		    <label for="{{ form.last_name.id_for_label }}">Last Name: </label>
 		    {{ form.last_name }}
 		</div>
 
 		<div class="fieldWrapper">
-		    {{ form.phone_number.errors }}
+		    {% if form.phone_number.errors %}
+			    <div class="alert alert-danger">
+				  	 {{ form.phone_number.errors }}
+				</div>
+			{% endif %}
 		    <label for="{{ form.phone_number.id_for_label }}">Phone Number: </label>
 		    {{ form.phone_number }}
 		</div>
 
 		<div class="fieldWrapper">
-		    {{ form.city.errors }}
+		    {% if form.city.errors %}
+			    <div class="alert alert-danger">
+				  	 {{ form.city.errors }}
+				</div>
+			{% endif %}
 		    <label for="{{ form.city.id_for_label }}">Select City :</label>
 		    {{ form.city }}
 		</div>
 
 		<div class="fieldWrapper">
-		    {{ form.date.errors }}
+		    {% if form.date.errors %}
+			    <div class="alert alert-danger">
+				  	 {{ form.date.errors }}
+				</div>
+			{% endif %}
 		    <label for="{{ form.date.id_for_label }}">Date :</label>
 		    {{ form.date }}
 		</div>
 
 		<button type="submit"> Submit </button>
 	</form>
+
+<script type="text/javascript">
+    $(function () {
+        $('#id_date').datetimepicker(
+        	{'sideBySide': true, "showClose": true,  "format": 'MM-DD-YYYY HH:mm', "minDate":new Date()});
+    });
+
+    $( "#homework_form" ).submit(function( event ) {
+    	phone_number = $("#id_phone_number").val()
+    	if (phone_number.length != 10){
+		  event.preventDefault();
+		  alert("Please enter a valid 10 digit mobile number")
+    	}
+	});
+
+
+</script>
 {% endblock %}

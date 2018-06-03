@@ -22,12 +22,13 @@ class City(BaseModel):
 class Customer(BaseModel):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    phone_number = models.IntegerField(
+    phone_number = models.BigIntegerField(
                         validators=[
                             MaxValueValidator(10),
                             MinValueValidator(10)
                         ]
                      )
+    # Currently, I have only provided support for mobile number, for future enhancement, we can update it so that it can accept, landline and country code etc.
       
     def __str__(self):
         return self.first_name + " " + self.last_name
@@ -56,3 +57,7 @@ class Booking(BaseModel):
     Customer = models.ForeignKey(Customer)
     Cleaner = models.ForeignKey(Cleaner)
     date =  models.DateTimeField()
+
+    def __str__(self):
+        return "{} {} -{} {} -{}".format(self.Customer.first_name, self.Customer.last_name ,self.Cleaner.first_name, self.Cleaner.last_name, self.date.strftime("%m-%d-%Y %H:%M"))
+    
