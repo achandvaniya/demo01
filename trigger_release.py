@@ -1,11 +1,15 @@
 # import requests
-# import json
+import json
 # import os
 import sys
 print("-------------------------")
 print("-->>> ", sys.argv) 
 print("-->>> ", sys.argv[0])
 print("-->>> ", sys.argv[1:])
+
+value = json.loads(sys.argv[1].replace("'", '"'))
+print ("--//--------------")
+print("-->>>  ",value)
 
 # session = requests.Session()
 
