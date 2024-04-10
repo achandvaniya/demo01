@@ -33,4 +33,4 @@ jobs:
           NAME: ${{ secrets.NAME }} 
           TOKEN: ${{ secrets.TOKEN }}
           CONFIG: [{"def_id": "121", artifect_id: "12121"}, {"def_id": "122", artifect_id: "11111"}] 
-      run: username=${{ secrets.NAME }} token=${{ secrets.TOKEN }} python trigger_release.py ${{CONFIG}}
+      run: username=${{ secrets.NAME }} token=${{ secrets.TOKEN }} python trigger_release.py ${{env.CONFIG}}
