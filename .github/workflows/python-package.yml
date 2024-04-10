@@ -32,7 +32,6 @@ jobs:
       env:
           NAME: ${{ secrets.NAME }} 
           TOKEN: ${{ secrets.TOKEN }}
-          CONFIG: "[{'def_id': 121, 'artifect_id': 12121}, {'def_id': 122, 'artifect_id': 11111}]"
-      run: |
-      echo ${{env.CONFIG}}
-      username=${{ secrets.NAME }} token=${{ secrets.TOKEN }} python trigger_release.py ${{env.CONFIG}}
+          # CONFIG: "[{'def_id': 121, 'artifect_id': 12121}, {'def_id': 122, 'artifect_id': 11111}]"
+          CONFIG: '"a","b","c"'
+      run: username=${{ secrets.NAME }} token=${{ secrets.TOKEN }} python trigger_release.py ${{env.CONFIG}}
