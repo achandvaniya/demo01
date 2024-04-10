@@ -30,7 +30,7 @@ jobs:
     
     - name: Set up environment
       run: | 
-        echo "CONFIG=[{'defination_id': '12121','artifect_id': '221122' }, {'defination_id': '1111','artifect_id': '4455677' }]" >> $GITHUB_ENV
+        echo "CONFIG=[{'defination_id': '12121','artifect_id': '221122', 'alias': '' }, {'defination_id': '1111','artifect_id': '4455677', 'alias': '' }]" >> $GITHUB_ENV
     
     - name: Trigger Release
       env:
