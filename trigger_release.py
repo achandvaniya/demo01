@@ -7,6 +7,7 @@ print("-->>> ", sys.argv)
 print("-->>> ", sys.argv[0])
 print("-->>> ", sys.argv[1:])
 
+# import pdb;pdb.set_trace()
 value = json.loads(sys.argv[1].replace("'", '"'))
 print ("--//--------------")
 print("-->>>  ",value)
