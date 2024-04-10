@@ -5,33 +5,22 @@ import sys, ast
 
 pipeline_configs = os.getenv('CONFIG')
 print (pipeline_configs)
-pipeline_configs = ast.literal_eval(pipeline_configs)
+pipeline_configs_deatails = ast.literal_eval(pipeline_configs)
 
-print(pipeline_configs)
+print(pipeline_configs_deatails)
 
-# pipeline_configs_deatails = []
-# for config in pipeline_configs:
-#     for key ,value in config.items():
-#       defination_id = key
-#       artifect_id = value
-#       print (defination_id, artifect_id)
-#       pipeline_configs_deatails.append({"defination_id": defination_id, "artifect_id": artifect_id })
+release_ids = []
 
-# print("--------")
-# print(pipeline_configs_deatails)
+def trigger_release_pipeline(defination_id, artifect_id):
+  #  return release_id
+  return 11
 
-# release_ids = []
+for pipeline_config in pipeline_configs_deatails:
+  defination_id, artifect_id = pipeline_config['defination_id'], pipeline_config['artifect_id']
+  release_id = trigger_release_pipeline(defination_id, artifect_id)
+  release_ids.append(release_id)
 
-# def trigger_release_pipeline(defination_id, artifect_id):
-#   #  return release_id
-#   return 11
-
-# for pipeline_config in pipeline_configs_deatails:
-#   defination_id, artifect_id = pipeline_config['defination_id'], pipeline_config['artifect_id']
-#   release_id = trigger_release_pipeline(defination_id, artifect_id)
-#   release_ids.append(release_id)
-
-# print (release_ids)
+print (release_ids)
 
 
 # session = requests.Session()
@@ -88,8 +77,8 @@ print(pipeline_configs)
 
 
 
-# while len(release_ids) > 0:
-#   for release_id in release_ids:
-#     print(release_id)
-#     index_of_release_id = release_ids.index(release_id)
-#     del release_ids[index_of_release_id]
+while len(release_ids) > 0:
+  for release_id in release_ids:
+    print(release_id)
+    index_of_release_id = release_ids.index(release_id)
+    del release_ids[index_of_release_id]
