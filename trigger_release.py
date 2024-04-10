@@ -17,6 +17,20 @@ for config in pipeline_configs:
 print("--------")
 print(pipeline_configs_deatails)
 
+release_ids = []
+
+def trigger_release_pipeline(defination_id, artifect_id):
+  #  return release_id
+  return 11
+
+for pipeline_config in pipeline_configs_deatails:
+  defination_id, artifect_id = pipeline_config['defination_id'], pipeline_config['artifect_id']
+  release_id = trigger_release_pipeline(defination_id, artifect_id)
+  release_ids.append(release_id)
+
+print (release_ids)
+
+
 # session = requests.Session()
 
 # url = "https://dev.azure.com/ajaycs1991/ajaycs1991/_apis/pipelines/1?api-version=7.1-preview.1"
