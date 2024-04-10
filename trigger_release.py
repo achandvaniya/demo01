@@ -4,12 +4,13 @@ import os
 import sys, ast
 
 my_list_str = os.getenv('CONFIG')
-my_list = ast.literal_eval(my_list_str)
+print (my_list_str)
+# my_list = ast.literal_eval(my_list_str)
 
 
-for d in my_list:
-  print(d['key1'])
-  print(d['key2'])
+# for d in my_list:
+#   print(d['key1'])
+#   print(d['key2'])
 
 # session = requests.Session()
 
