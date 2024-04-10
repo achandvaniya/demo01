@@ -7,8 +7,8 @@ my_list_str = os.getenv('CONFIG')
 print (my_list_str)
 my_list = ast.literal_eval(my_list_str)
 print(type(my_list))
-for k,v in my_list.items():
-    print (k, v)
+for a in my_list:
+    print(a)
 
 # session = requests.Session()
 
