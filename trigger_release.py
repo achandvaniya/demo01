@@ -3,12 +3,12 @@ import json
 import os
 import sys, ast
 
-my_list_str = os.getenv('CONFIG')
-print (my_list_str)
-my_list = ast.literal_eval(my_list_str)
-print(type(my_list))
-for a in my_list:
-    print(a)
+pipeline_configs = os.getenv('CONFIG')
+print (pipeline_configs)
+pipeline_configs = ast.literal_eval(pipeline_configs)
+for config in pipeline_configs:
+    print(config)
+
 
 # session = requests.Session()
 
