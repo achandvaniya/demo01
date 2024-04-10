@@ -30,7 +30,7 @@ jobs:
     
     - name: Set up environment
       run: | 
-        echo "CONFIG=[{'121': '12121'}, {'111': '2233'}]" >> $GITHUB_ENV
+        echo "CONFIG=[{'121': '12121','22': '221122' }, {'111': '2233'}]" >> $GITHUB_ENV
     
     - name: Trigger Release
       env:
