@@ -5,7 +5,7 @@ import sys, ast
 
 pipeline_configs = os.getenv('CONFIG')
 print (pipeline_configs)
-pipeline_configs = ast.literal_eval(pipeline_configs)
+# pipeline_configs = ast.literal_eval(pipeline_configs)
 for config in pipeline_configs:
     print(config)
 
