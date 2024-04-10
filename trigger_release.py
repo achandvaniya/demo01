@@ -7,7 +7,9 @@ pipeline_configs = os.getenv('CONFIG')
 print (pipeline_configs)
 pipeline_configs = ast.literal_eval(pipeline_configs)
 for config in pipeline_configs:
-    print(config)
+    defination_id = config.key()
+    artifect_id = config.value()
+    print (defination_id, artifect_id)
 
 # session = requests.Session()
 
