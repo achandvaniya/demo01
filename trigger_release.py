@@ -1,16 +1,15 @@
 # import requests
 import json
-# import os
-import sys
-print("-------------------------")
-print("-->>> ", sys.argv) 
-print("-->>> ", sys.argv[0])
-print("-->>> ", sys.argv[1:])
+import os
+import sys, ast
 
-# import pdb;pdb.set_trace()
-value = json.loads(sys.argv[1].replace("'", '"'))
-print ("--//--------------")
-print("-->>>  ",value)
+my_list_str = os.getenv('CONFIG')
+my_list = ast.literal_eval(my_list_str)
+
+
+for d in my_list:
+  print(d['key1'])
+  print(d['key2'])
 
 # session = requests.Session()
 
