@@ -8,9 +8,9 @@ print (pipeline_configs)
 pipeline_configs = ast.literal_eval(pipeline_configs)
 pipeline_configs_deatails = []
 for config in pipeline_configs:
-    for k,v in config.items():
-      defination_id = config.key()
-      artifect_id = config.value()
+    for key ,value in config.items():
+      defination_id = key
+      artifect_id = value
       print (defination_id, artifect_id)
       pipeline_configs_deatails.append({"defination_id": defination_id, "artifect_id": artifect_id })
 
